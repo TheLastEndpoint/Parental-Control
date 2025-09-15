@@ -162,13 +162,11 @@ public class RegistrationController {
     }
 
 public String applicationUrl(HttpServletRequest request) {
-    String scheme = request.isSecure() ? "https" : "http";
-    String server = request.getServerName();
-    int port = request.getServerPort();
+
 
     // Include port only if it’s not the default
 
-    return scheme + "://" + server + port + request.getContextPath();
+    return "http://"+request.getServerName()+":"+request.getServerPort()+request.getContextPath();
 }
 
 
