@@ -82,6 +82,8 @@ public class RegistrationController {
 
         User user = userService.registerUser(theUser);
 
+        System.out.println("hello");
+
 
 //        publish registration event it will send the email of user
         publisher.publishEvent(new RegistrationCompleteEvent(user, applicationUrl(request)));
