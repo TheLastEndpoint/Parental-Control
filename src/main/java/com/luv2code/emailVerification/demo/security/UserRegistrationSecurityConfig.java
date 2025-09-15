@@ -32,6 +32,7 @@ public class UserRegistrationSecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception{
         http.authorizeHttpRequests(configurer->
                         configurer
+                                .requestMatchers("/").permitAll()
                                 .requestMatchers("/start/**").permitAll()
                                 .requestMatchers("/child/**").permitAll()
                                 .requestMatchers("/register/**").permitAll()
