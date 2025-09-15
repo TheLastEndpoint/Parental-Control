@@ -165,9 +165,8 @@ public String applicationUrl(HttpServletRequest request) {
     int port = request.getServerPort();
 
     // Include port only if it’s not the default
-    String portPart = (port == 80 || port == 443) ? "" : ":" + port;
 
-    return scheme + "://" + server + portPart + request.getContextPath();
+    return scheme + "://" + server + port + request.getContextPath();
 }
 
 
